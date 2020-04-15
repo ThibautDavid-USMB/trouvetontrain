@@ -1,0 +1,223 @@
+﻿<!-- Variable d'environnement pour intégrer le css-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TTV - distance</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Price Slider Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/nouislider.css' %}">
+    <!-- Google fonts - Playfair Display-->
+    <link rel="stylesheet" href="{% static '/css/css' %}">
+    <!-- Google fonts - Poppins-->
+    <link rel="stylesheet" href="{% static 'css/css(1)' %}">
+    <!-- swiper-->
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+    <!-- Magnigic Popup-->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.default.afb5697e.css' %}" id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'css/custom.0a822280.css' %}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/favicon.png">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!--Date picker-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Corps -->
+<body>
+    <!-- En-tête -->
+    <header class="header">
+        <!-- Navbar-->
+        <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+            <a href="./index.html" class="navbar-brand py-1"><img src="{% static '/css/ttv.png' %}" height="50" width="80" alt="Directory logo"></a>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="/" class="nav-link">Accueil</a></li>
+                    <li><a href="distance" class="nav-link">Distance</a></li>
+                    <li><a href="recherche" class="nav-link">Recherche</a></li>
+                    <li><a href="mesvoyages" class="nav-link">Mes trajets</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /Navbar -->
+    </header>
+    <!-- Bar de recherche -->
+    <section class="hero-home">
+        <!-- /Image de fond -->
+        <div class="swiper-container hero-slider swiper-container-fade swiper-container-horizontal">
+            <div class="swiper-wrapper dark-overlay" style="transition-duration: 2000ms;">
+                <div style="background-image: url(&quot;https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/photo/photo-1501621965065-c6e1cf6b53e2.jpg&quot;); width: 1348px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 2000ms;"
+                     class="swiper-slide"></div>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+        </div>
+        <!-- Section principal -->
+        <div class="container py-6 py-md-7 text-white z-index-20">
+            <div class="row">
+                <div class="col-xl-10">
+                    <!-- Titre -->
+                    <div class="text-center text-lg-left">
+                        <p class="subtitle letter-spacing-4 mb-2 text-secondary text-shadow">
+                            Calculer la distance à vol d'oiseau !
+                        </p>
+                        <h1 class="display-3 font-weight-bold text-shadow">Distance</h1>
+                    </div>
+                    <!-- bar de recherche -->
+                    <div class="search-bar mt-3 p-3">
+                        <!-- formulaire -->
+                        <form method="get">
+                            <!-- Première ligne -->
+                            <div class="row">
+                                <div class="col-lg-6 d-flex align-items-center form-group">
+                                    <div class="col-lg-8 input-label-absolute w-100">
+                                        <input type="text" name="longd" id="longd" placeholder="Longitude de départ" class="text-center form-control border-0 shadow-0" onchange="{% static '/js/searchgare.js' %}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center form-group">
+                                    <div class="col-lg-8 input-label-absolute w-100">
+                                        <input type="text" name="latd" id="latd" placeholder="Latitude de départ" class="text-center form-control border-0 shadow-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- deuxième ligne -->
+                            <div class="row">
+                                <div class="col-lg-6 d-flex align-items-center form-group">
+                                    <div class="col-lg-8 input-label-absolute w-100">
+                                        <input type="text" name="longa" id="longa" placeholder="Longitude d'arrivée" class="text-center form-control border-0 shadow-0">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center form-group">
+                                    <div class="col-lg-8 input-label-absolute w-100">
+                                        <input type="text" name="lata" id="lata" placeholder="Latitude de d'arrivée" class="text-center form-control border-0 shadow-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Troisième ligne (recherche) -->
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-4">
+                                    <button type="submit" class="btn btn-primary btn-block rounded-xl h-100">Chercher</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- bar des resultats -->
+                <div class="col-xl-10 mt-3">
+                    <div class="text-center mt-2 p-lg-2">
+                        <h3><input type="text" name="depart" placeholder="{{ Distance }}" class=" search-bar text-center border-0 shadow-0" readonly></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- pied de page -->
+    <footer class="position-relative z-index-10 d-print-none">
+        <!-- Plan du site -->
+        <div class="py-6 bg-gray-200 text-muted">
+            <div class="container">
+                <div class="row">
+                    <!-- Colonne 1 -->
+                    <div class="ml-7 col-lg-4 col-md-6 mb-5 mb-lg-0">
+                        <h6 class="text-uppercase text-dark mb-3">Pages</h6>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/" class="text-muted">
+                                    Accueil<span class="badge badge-info-light ml-1">New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="distance" class="text-muted">
+                                    Distance <span class="badge badge-info-light ml-1">New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recherche" class="text-muted">
+                                    Recherche <span class="badge badge-info-light ml-1">New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mesVoyages" class="text-muted">
+                                    Mes trajets<span class="badge badge-info-light ml-1">New</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Colonne 2 -->
+                    <div class="col-lg-4">
+                        <h6 class="text-uppercase text-dark mb-3">Contact</h6>
+                        <p class="mb-3"> Vous souhaitez que l'on vous recontacte ? Laissez nous votre adresse mail</p>
+                        <!-- //////      !        \\\\\ Action a définir-->
+                        <form action="#" id="newsletter-form">
+                            <div class="input-group mb-3">
+                                <input type="email" placeholder="Votre adresse mail" aria-label="Your Email Address"
+                                       class="form-control bg-transparent border-dark border-right-0">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-dark border-left-0">
+                                        <svg class="bi bi-box-arrow-in-right" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8.146 11.354a.5.5 0 010-.708L10.793 8 8.146 5.354a.5.5 0 11.708-.708l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0z" clip-rule="evenodd" />
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9A.5.5 0 011 8z" clip-rule="evenodd" />
+                                            <path fill-rule="evenodd" d="M13.5 14.5A1.5 1.5 0 0015 13V3a1.5 1.5 0 00-1.5-1.5h-8A1.5 1.5 0 004 3v1.5a.5.5 0 001 0V3a.5.5 0 01.5-.5h8a.5.5 0 01.5.5v10a.5.5 0 01-.5.5h-8A.5.5 0 015 13v-1.5a.5.5 0 00-1 0V13a1.5 1.5 0 001.5 1.5h8z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright section bandeau gris -->
+        <div class="py-4 font-weight-light bg-gray-800 text-gray-300">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="text-sm mb-md-0">© 2020 Master TRI - ETRS804-Architecture services.</p>
+                        <p class="text-sm mb-md-0"> Thibaut DAVID</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-inline mb-0 mt-2 mt-md-0 text-center text-md-right">
+                            <li class="list-inline-item"><img src="{% static '/css/Logo_USMB_web_RVB.png' %}" alt="..." class="w-7rem"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- JavaScript path-->
+<!-- datepicker -->
+<script>
+    $('#datetimepicker4').datetimepicker({ footer: true, modal: true });
+</script>
+<!-- jQuery-->
+<script src="{% static '/js/jquery.min.js' %}"></script>
+<!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Magnific Popup - Lightbox for the gallery-->
+<script src="{% static '/js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Smooth scroll-->
+<script src="{% static '/js/smooth-scroll.polyfills.min.js' %}"></script>
+<!-- Bootstrap Select-->
+<script src="{% static '/js/bootstrap-select.min.js' %}"></script>
+
+<script src="{% static '/js/icon.js' %}"></script>
+<script src="{% static '/js/datepicker.js' %}"></script>
+<!-- Swiper Carousel                       -->
+<script src="{% static 'js/swiper.min.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/demo.36f8799a.js' %}"></script>
+<!-- Main Theme JS file    -->
+<script src="{% static '/js/theme.55f8348b.js' %}"></script>
+
+</html>
