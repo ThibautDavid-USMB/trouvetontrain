@@ -30,7 +30,7 @@ def devise(request):
 
 def rechercher(request):
     search_result = {}
-    token_auth = '040b7667-1a01-437e-9f4a-4dc61ef3f405'
+    token_auth = '040b7667-1a01-437e-9f4a-4dc61ef3f405' 
     if 'depart' and 'arriver' in request.GET:
         #récupération de l'oid et coord de la gare de depart
         depart = request.GET['depart']
@@ -96,7 +96,7 @@ def rechercher(request):
             trajetobj = trajetobj.get("journeys")
             trajetobj = trajetobj[0]
             formatageddep = str(trajetobj.get("departure_date_time"))
-            formatageddep = formatageddep[6:8]+"/"+formatageddep[4:6]+" à "+formatageddep[9:11]+"h"+formatageddep[12:14]
+            formatageddep = formatageddep[6:8]+"/"+formatageddep[4:6]+" à "+formatageddep[9:11]+"h"+formatageddep[11:13]
             dico["departure_date_time"+str(i)] = formatageddep
             formatagedarr = str(trajetobj.get("arrival_date_time")) 
             formatagedarr = formatagedarr[6:8]+"/"+formatagedarr[4:6]+" à "+formatagedarr[9:11]+"h"+formatagedarr[12:14]
