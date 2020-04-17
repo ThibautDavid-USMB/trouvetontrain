@@ -7,4 +7,5 @@ urlpatterns = [
     path('distances', views.distanceSoap, name ='distances'),
     path('mesvoyages', views.mesvoyages, name='MesVoyages'),
     path('recherche', views.rechercher, name='Recherche'),
+    path('save', views.enregistrement, name='enregistrer')
 ]

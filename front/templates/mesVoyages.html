@@ -65,6 +65,7 @@
         <div class="container">
             <div class="row">
                 <!-- Resultat recherche -->
+                {% for post in posts %}
                 <div class="card-body hover-animate">
                     <div class="card h-100 border-0 shadow">
                         <!-- information sur le trajet -->
@@ -81,16 +82,17 @@
                                     <!-- information trajet -->
                                     <td style="width:30%" class="col-lg-3">
                                         <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
+                                            <a id="hdepart"><strong>{{ trajet.dateDepart }}</strong></a></br><a id="depart">{{ trajet.depart }}</a>
                                         </h5>
+                                    </td>
                                     <td class="col-lg-3">
                                         <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
+                                            <a id="harrive"><strong>{{ trajet.dateDepart }}</strong></a></br><a id="arrive">{{ trajet.arriver }}</a>
                                         </h5>
                                     </td>
                                     <!-- prix -->
                                     <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
+                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>{{ trajet.prix }}</a></h2>
                                     </td>
                                     <!-- devise -->
                                     <td class="col-lg-3">
@@ -111,289 +113,7 @@
                         </table>
                     </div>
                 </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
-                                        </h5>
-                                    </td>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>12h30</strong></a></br><a id="depart"> Paris gare-de-lyon</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>15h30</strong></a></br><a id="arrive"> Chambéry</a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="trajet" class="text-muted mr-mb-4"><a id="hdepart"><strong></strong>95€</a></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <!-- Bouton d'enregistrement des items -->
             <section>

@@ -1,4 +1,4 @@
-﻿<!-- Variable d'environnement pour intégrer le css-->
+﻿<!-- Variable d'environnement pour intégrer le css/js-->
 {% load static %}
 
 <!DOCTYPE html>
@@ -102,6 +102,7 @@
             </div>
         </div>
     </section>
+    <!--Ecriture de ma boucle pour inséré les élements trouver de mon views.py-->
     <!-- Résultat -->
     <section id="hidden" class="py-5">
         <div class="container">
@@ -111,548 +112,590 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time1 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time1 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix1" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix1')">€</button>
+                <form action="/save" method="get"></form>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save1" type="checkbox" class="custom-control-input">
+                                                <label for="save1" class="custom-control-label text-muted"></label>
                                             </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix1')">$</button>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time1 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time1 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix1" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise1" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix1','devise1')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix1','devise1')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix1','devise1')">£</button>
+                                                </div>
                                             </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix1')">£</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save2" type="checkbox" class="custom-control-input">
+                                                <label for="save2" class="custom-control-label text-muted"></label>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time2 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        </td>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time2 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix2" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise2" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix2','devise2')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix2','devise2')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix2','devise2')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save3" type="checkbox" class="custom-control-input">
+                                                <label for="save3" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time3 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time3 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix3" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise3" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix3','devise3')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix3','devise3')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix3','devise3')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save4" type="checkbox" class="custom-control-input">
+                                                <label for="save4" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time4 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time4 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix4" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise4" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix4','devise4')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix4','devise4')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix4','devise4')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save5" type="checkbox" class="custom-control-input">
+                                                <label for="save5" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time5 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time5 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix5" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise5" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix5','devise5')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix5','devise5')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix5','devise5')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save6" type="checkbox" class="custom-control-input">
+                                                <label for="save6" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time6 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time6 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix6" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise6" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix6','devise6')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix6','devise6')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix6','devise6')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save7" type="checkbox" class="custom-control-input">
+                                                <label for="save7" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time7 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time7 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix7" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise7" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix7','devise7')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix7','devise7')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix7','devise7')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save8" type="checkbox" class="custom-control-input">
+                                                <label for="save8" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time8 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time8 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix8" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise8" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix8','devise8')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix8','devise8')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix8','devise8')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save9" type="checkbox" class="custom-control-input">
+                                                <label for="save9" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time9 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time9 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix9" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise9" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix9','devise9')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix9','devise8')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix9','devise8')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Resultat recherche -->
+                    <div class="card-body hover-animate">
+                        <div class="card h-100 border-0 shadow">
+                            <!-- information sur le trajet -->
+                            <table class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <!-- case a cocher -->
+                                        <td>
+                                            <div class="custom-control custom-checkbox ml-2">
+                                                <input id="save10" type="checkbox" class="custom-control-input">
+                                                <label for="save10" class="custom-control-label text-muted"></label>
+                                            </div>
+                                        </td>
+                                        <!-- information trajet -->
+                                        <td style="width:30%" class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-smb-4">
+                                                <a id="hdepart"><strong>{{ departure_date_time10 }}</strong></a></br><a id="depart">{{depart}}</a>
+                                            </h5>
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="harrive"><strong>{{ arrival_date_time10 }}</strong></a></br><a id="arrive">{{arriver}}</a>
+                                            </h5>
+                                        </td>
+                                        <!-- distance -->
+                                        <td class="col-lg-3">
+                                            <h5 id="trajet" class="text-muted mr-mb-4">
+                                                <a id="distance">{{ distance }} km</a>
+                                            </h5>
+                                        </td>
+                                        <!-- prix -->
+                                        <td class="col-lg-3">
+                                            <h2 id="prix10" class="text-muted mr-mb-4">{{prix}}</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <h2 id="devise10" class="text-muted mr-mb-4"> €</h2>
+                                        </td>
+                                        <!-- devise -->
+                                        <td class="col-lg-3">
+                                            <div class="col-lg-3  d-flex align-items-center form-group">
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
+                                                    <button type="button" class="btn btn-secondary" onclick="euro('distance','prix10','devise10')">€</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
+                                                    <button type="button" class="btn btn-secondary" onclick="dollar('distance','prix10','devise10')">$</button>
+                                                </div>
+                                                <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
+                                                    <button type="button" class="btn btn-secondary" onclick="livre('distance','prix10','devise10')">£</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time2 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    </td>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time2 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix2" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix2')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix2')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix2')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time3 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time3 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix3" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix3')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix3')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix3')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time4 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time4 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix4" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix4')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix4')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix4')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time5 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time5 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix5" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix5')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix5')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix5')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time6 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time6 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix6" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix6')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix6')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix6')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time7 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time7 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix7" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix7')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix7')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix7')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time8 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time8 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix8" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix8')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix8')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix8')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time9 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time9 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix9" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix9')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix9')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix9')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Resultat recherche -->
-                <div class="card-body hover-animate">
-                    <div class="card h-100 border-0 shadow">
-                        <!-- information sur le trajet -->
-                        <table class="table-responsive">
-                            <tbody>
-                                <tr>
-                                    <!-- case a cocher -->
-                                    <td>
-                                        <div class="custom-control custom-checkbox ml-2">
-                                            <input id="save" type="checkbox" class="custom-control-input">
-                                            <label for="save" class="custom-control-label text-muted"></label>
-                                        </div>
-                                    </td>
-                                    <!-- information trajet -->
-                                    <td style="width:30%" class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-smb-4">
-                                            <a id="hdepart"><strong>{{ departure_date_time10 }}</strong></a></br><a id="depart">{{depart}}</a>
-                                        </h5>
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="harrive"><strong>{{ arrival_date_time10 }}</strong></a></br><a id="arrive">{{arriver}}</a>
-                                        </h5>
-                                    </td>
-                                    <!-- distance -->
-                                    <td class="col-lg-3">
-                                        <h5 id="trajet" class="text-muted mr-mb-4">
-                                            <a id="distance"><strong>{{ distance }} km</strong></a>
-                                        </h5>
-                                    </td>
-                                    <!-- prix -->
-                                    <td class="col-lg-3">
-                                        <h2 id="prix10" class="text-muted mr-mb-4"><strong>{{prix}}</strong></h2>
-                                    </td>
-                                    <!-- devise -->
-                                    <td class="col-lg-3">
-                                        <div class="col-lg-3  d-flex align-items-center form-group">
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="First group">
-                                                <button type="button" class="btn btn-secondary" onclick="euro('prix10')">€</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Second group">
-                                                <button type="button" class="btn btn-secondary" onclick="dollar('prix10')">$</button>
-                                            </div>
-                                            <div class="btn-group mt-3 mr-4" role="group" aria-label="Third group">
-                                                <button type="button" class="btn btn-secondary" onclick="livre('prix10')">£</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Bouton d'enregistrement des items -->
-            <section>
-                <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm d-none d-lg-block">
-                    <svg class="bi bi-file-earmark-plus" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h5v-1H4a1 1 0 01-1-1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v2h1V6L9 1z"></path>
-                        <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"></path>
-                        <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"></path>
-                    </svg>
-                    <use xlink:href="#configuration-1"> </use>
-                    </svg>
-                </button>
-            </section>
+                <!-- Bouton d'enregistrement des items -->
+                <section>
+                    <button type="submit" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm d-none d-lg-block">
+                        <svg class="bi bi-file-earmark-plus" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1H4a2 2 0 00-2 2v10a2 2 0 002 2h5v-1H4a1 1 0 01-1-1V3a1 1 0 011-1h5v2.5A1.5 1.5 0 0010.5 6H13v2h1V6L9 1z"></path>
+                            <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"></path>
+                            <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <use xlink:href="#configuration-1"> </use>
+                        </svg>
+                    </button>
+                </section>
+            </form>
             <!-- Pagination -->
             <nav style="width:30%" aria-label="Page navigation example">
                 <button type="submit" class="col-lg-6 starter-template btn btn-primary btn-block rounded-xl h-100">Enregistrer </button>
