@@ -6,11 +6,11 @@ qui sert de serveur pour l'API rest.
 
 ## Acceder au site : http://thibautdavid.pythonanywhere.com/
 
-###T élécharger et lancer le projet
+### Télécharger et lancer le projet
 
 Ce projet fontionne avec Python 3.7, il est nécessaire de l'installer avant de lancer ce projet
 
-#####C loner le répertoire git
+##### Cloner le répertoire git
 ```
 git clone https://github.com/ThibautDavid-USMB/trouvetontrain.git
 ```
