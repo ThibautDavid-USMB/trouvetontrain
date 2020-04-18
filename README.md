@@ -1,4 +1,4 @@
-# trouvetontrain | Thibaut DAVID
+# Trouve Ton Train | Thibaut DAVID
 
 Projet Trouve Ton Train, permet d'afficher les horaries de train pour un trajet et une date voulue grace à l'API de la scnf.
 Ce projet est composé de deux serveur, un sur Django, qui permet d'éxecuter la partie front ansi que l'API SOAP et un sur Flask,
